@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'IRANSans';
+    src: url('/static/fonts/IRANSansWeb.woff2') format('woff2'),
+    url('/static/fonts/IRANSansWeb.woff') format('woff'),
+    url('/static/fonts/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    font-family: 'IRANSans', 'IranNastaliq', Tahoma, sans-serif;
+}
+
+body {
+    background-color: #e5e7eb !important;
+    direction: rtl !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-items {
+    direction: ltr !important;
+    font-size: 20px;
+}
+
+.header-logo img {
+    width: 300px;
+    margin-top: 15px;
+}
+
+.header {
+    width: 80%;
+    direction: rtl !important;
+    background-color: #f3f4f6;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 3px rgba(6, 68, 218, 0.07);
+}
+
+.main-content {
+    font-size: 20px;
+    background-color: #f3f4f6;
+    width: 80%;
+    margin: 10px auto;
+    padding: 0 7%;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 2px 3px rgba(6, 68, 218, 0.07);
+}
+
+.main-content input {
+    border-radius: 10px;
+}
+
+.main-content label {
+    margin-right: 15px;
+}
+
+.main-content-text {
+    margin-top: 50px;
+}
+
+.main-content p {
+    margin-top: 15px;
+}
+
+.input-large {
+    height: 200px;
+}
+
+.footer {
+    background-color: #f3f4f6;
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 2px 3px rgba(6, 68, 218, 0.07);
+    padding: 20px;
+}
+
+.burger {
+    display: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+}

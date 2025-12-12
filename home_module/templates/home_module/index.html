@@ -1,0 +1,109 @@
+{% load static %}
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home_module/style.css' %}">
+    <title>کارت ملی ساز</title>
+</head>
+
+<body>
+<!-- header section start -->
+<section class="header d-flex justify-content-around mt-4">
+    <div class="header-logo mb-3">
+        <a href="{% url 'home' %}"><img src="{% static 'img/ArshiaSamimifar.png' %}" alt="Arshia Samimifar"></a>
+    </div>
+</section>
+<!-- header section end -->
+
+<!-- main content section start -->
+<section class="main-content">
+    <div class="main-content-text">
+        <h1>کارت ملی ساز فیک</h1>
+        <p>لطفا تمامی فیلد های زیر را با دقت تکمیل کنید و کارت ملی خود را دریافت کنید.</p>
+        {% for field in generator_form %}
+            {% if field.errors %}
+                {% for error in field.errors %}
+                    <div class="alert alert-warning">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row d-flex justify-content-around">
+        <form method="post" enctype="multipart/form-data" novalidate> {% csrf_token %}
+            <div class="row g-3">
+                <div class="col-6">
+                    <label for="first-name" class="form-label">نام:</label>
+                    {{ generator_form.first_name }}
+                </div>
+                <div class="col-6">
+                    <label for="first-name" class="form-label">نام خانوادگی:</label>
+                    {{ generator_form.last_name }}
+                </div>
+                <div class="col-6">
+                    <label for="first-name" class="form-label">کد ملی:</label>
+                    {{ generator_form.national_code }}
+                </div>
+                <div class="col-6">
+                    <label for="first-name" class="form-label">تاریخ تولد:</label>
+                    {{ generator_form.birthday }}
+                </div>
+                <div class="col-6">
+                    <label for="first-name" class="form-label">نام پدر:</label>
+                    {{ generator_form.father_name }}
+                </div>
+                <div class="col-6">
+                    <label for="first-name" class="form-label">تصویر شما بدون پس زمینه : (378x472)</label>
+                    {{ generator_form.image }}
+                </div>
+                <button class="col-12 btn btn-success mb-lg-5" type="submit">
+                    دانلود
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- main content section end -->
+
+<!-- footer section start -->
+<section class="footer d-flex justify-content-between gap-4">
+    <div class="about-me">
+        <h5>درباره من</h5>
+        <p>
+            من ارشیا صمیمی‌فر هستم؛ متولد ۱۲ مرداد ۱۳۸۱.
+            عاشق یادگیری و همیشه جویا دانشی‌ام. مسیر حرفه‌ای من در حوزه برنامه‌نویسی است و با Python و Django به‌صورت
+            جدی کار می‌کنم.
+            علاوه بر توسعه وب، به دنیای شبکه، لینوکس و زیرساخت هم علاقه‌مندم و همواره در حال گسترش مهارت‌هایم در این
+            زمینه‌ها هستم.
+            هدفم ساختن پروژه‌های کاربردی، پیشرفت مداوم و تبدیل شدن به یک برنامه‌نویس حرفه‌ای است.
+        </p>
+
+    </div>
+    <div class="social-media p-4 text-center">
+        <h5>ارتباط با من</h5>
+
+        <div class="d-flex justify-content-center gap-4 mt-3">
+            <a href="https://www.instagram.com/arshia219675/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram fa-2x"></i>
+            </a>
+
+            <a href="https://web.telegram.org/k/#@arshia21420" target="_blank">
+                <i class="fa-brands fa-telegram fa-2x"></i>
+            </a>
+
+            <a href="https://wa.me/989374641310" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </a>
+        </div>
+    </div>
+
+</section>
+<!-- footer section end -->
+</body>
+</html>
+
